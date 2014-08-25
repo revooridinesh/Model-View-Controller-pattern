@@ -80,6 +80,7 @@
   <ItemGroup>
     <ClCompile Include="Edit_Window.cpp" />
     <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="Manual_Edit.cpp" />
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +90,9 @@
     <ClInclude Include="Graph.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Manual_Edit.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -96,6 +100,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Edit_Window.resx">
       <DependentUpon>Edit_Window.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manual_Edit.resx">
+      <DependentUpon>Manual_Edit.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>

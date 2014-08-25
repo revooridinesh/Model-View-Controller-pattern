@@ -1,4 +1,5 @@
 #pragma once
+#include "Manual_Edit.h"
 
 namespace ModelViewController_Project {
 
@@ -53,6 +54,8 @@ namespace ModelViewController_Project {
 	private: System::Windows::Forms::Label^  label4;
 	private: System::Windows::Forms::Label^  label5;
 	private: System::Windows::Forms::Label^  label6;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Button^  Manual_button;
 
 	private:
 		/// <summary>
@@ -82,6 +85,8 @@ namespace ModelViewController_Project {
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->Manual_button = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Select_File
@@ -228,11 +233,34 @@ namespace ModelViewController_Project {
 			this->label6->TabIndex = 14;
 			this->label6->Text = L"Energy";
 			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label7->Location = System::Drawing::Point(2, 286);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(362, 18);
+			this->label7->TabIndex = 15;
+			this->label7->Text = L"Click Below Button to edit the Values Manually ";
+			// 
+			// Manual_button
+			// 
+			this->Manual_button->Location = System::Drawing::Point(28, 322);
+			this->Manual_button->Name = L"Manual_button";
+			this->Manual_button->Size = System::Drawing::Size(75, 23);
+			this->Manual_button->TabIndex = 16;
+			this->Manual_button->Text = L"Manual";
+			this->Manual_button->UseVisualStyleBackColor = true;
+			this->Manual_button->Click += gcnew System::EventHandler(this, &Edit_Window::Manual_button_Click);
+			// 
 			// Edit_Window
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(665, 492);
+			this->Controls->Add(this->Manual_button);
+			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
@@ -579,5 +607,13 @@ private: System::Void Delete_Button_Click(System::Object^  sender, System::Event
 			 }
 
 }
+
+private: System::Void Manual_button_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Manual_Edit^ Edit_M = gcnew Manual_Edit();
+			 Edit_M->ShowDialog();
+
+}
+
 };
+
 }
